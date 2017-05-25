@@ -1,0 +1,23 @@
+@model Twiter.Models.Post
+
+@{ 
+    var follows = ViewBag.follows as Follow;
+}
+
+<div class="row linkId bg-info animated slideInRight" id="@Model.PostId">
+    <h4 id="title">@Model.PostTitle</h4>
+    <h4 id="data"><small>@Model.PostData</small></h4>
+    <h5 id="poster"><small><i>Posted by: @Model.UserName</i></small></h5>
+    @if (User.Identity.IsAuthenticated && follows != null && follows.FollowedName.Split(',').Any(n => n == @Model.UserName))
+    {
+        <h5 id="follow"><small>@Html.ActionLink("Unfollow", "RemoveFollow", new { userName = User.Identity.Name, followedName = @Model.UserName }, new { @class = "toggle unfollow", id = "post" + @Model.Follow, onclick="toggle('foo');" })</small></h5>
+        <h5 id="follow"><small>@Html.ActionLink("Follow", "AddFollow", new { userName = User.Identity.Name, followedName = @Model.UserName }, new { @class = "toggle follow", id = "post" + @Model.Follow, onclick="toggle('foo');" })</small></h5>
+    }
+    else if ((User.Identity.IsAuthenticated && follows == null || follows != null && !follows.FollowedName.Split(',').Any(n => n == @Model.UserName)) && User.Identity.Name != @Model.UserName)
+    {
+        <h5 id="follow"><small>@Html.ActionLink("Follow", "AddFollow", new { userName = User.Identity.Name, followedName = @Model.UserName }, new { @class = "toggle follow", id = "post" + @Model.Follow, onclick="toggle('foo');" })</small></h5>
+        <h5 id="follow"><small>@Html.ActionLink("Unfollow", "RemoveFollow", new { userName = User.Identity.Name, followedName = @Model.UserName }, new { @class = "toggle unfollow", id = "post" + @Model.Follow, onclick="toggle('foo');" })</small></h5>
+    }
+
+    <h6 id="date"><small>@Model.PostDate UTC</small></h6>
+</div>

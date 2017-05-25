@@ -1,0 +1,38 @@
+﻿body, nav {
+    background-color: #F9F9F9 !important;
+}
+textarea {
+    resize: none;
+}
+
+.bgColor {
+    background-color: #FFFFFD;
+}
+
+#date {
+    float: right;
+}
+
+#title, #data, #poster, #date, #follow {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-style: solid;
+}
+
+#poster {
+    width: 200px;
+    float: left;
+}
+
+#follow {
+    width: 50px;
+    float: left;
+}
+
+.navbar-brand, .links {
+    color: #2181DE !important;
+}
+
+.navbar-brand:hover, .links:hover {
+    color: black !important;
+}

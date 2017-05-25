@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@using Twiter.ViewModels
+
+@{
+    ViewData["Title"] = "twiter (sic)";
+    var follows = ViewBag.follows as Follow;
+    var counter = 1;
+}
+
+@model IEnumerable<Twiter.Models.Post>
+
+
+<div class="table-hover" id="posts">
+    @foreach (var post in Model)
+    {
+        @Html.Partial("_Index", post)
+        counter += 1;
+    }
+</div>
+
+<script>
+    
+</script>
+
+@if (Model.Count() == 0)
+{
+    <p>No posts to display.</p>
+}
