@@ -40,7 +40,7 @@ namespace Twiter
         {
             // Add framework services.
             services.AddDbContext<PostContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("twitalikeDB")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<PostContext>()
@@ -48,7 +48,7 @@ namespace Twiter
 
             services.AddMvc(options =>
             {
-                options.SslPort = 44384;
+                options.SslPort = 44390;
                 options.Filters.Add(new RequireHttpsAttribute());
             });
 

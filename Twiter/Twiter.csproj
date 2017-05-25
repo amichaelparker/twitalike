@@ -11,6 +11,10 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-Twiter-bc2534f4-c4bb-4788-93d5-d45e7000ba12</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bower" Version="1.3.11" />
     <PackageReference Include="Dapper" Version="1.50.2" />
