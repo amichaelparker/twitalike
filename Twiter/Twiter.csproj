@@ -47,6 +47,7 @@
   <ItemGroup>
     <None Include="wwwroot\css\main.css" />
     <Folder Include="Data\Migrations\" />
+    <Folder Include="Properties\" />
     <Folder Include="Views\Add\" />
   </ItemGroup>
 

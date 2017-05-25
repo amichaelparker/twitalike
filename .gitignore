@@ -6,6 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
+.gitignore
+Twiter/appsettings.json
+Twiter/appsettings.Development.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
